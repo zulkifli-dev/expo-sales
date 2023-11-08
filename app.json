@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "expo_sales",
+    "slug": "si_pro_cantik",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.zulkifli.dev.expo_sales"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "BASE_URL": "http://127.0.0.1:8000/api",
+      "eas": {
+        "projectId": "0d6fd53b-5740-4043-b75f-6857cda7c38f"
+      }
+    },
+    "owner": "zulkifli.dev"
+  }
+}
