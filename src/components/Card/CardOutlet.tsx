@@ -15,7 +15,7 @@ function CardOutlet({ outlet }: { outlet: OutletAttributes }) {
         return (
             <View style={{ gap: 12 }} className='flex flex-row w-full'>
                 <Button size='small' onPress={toggleModal} classNameContainer='flex-1'>Ubah Status</Button>
-                <Button size='small' onPress={() => { toggleModal(), navigation.navigate('ProsesOrder') }} classNameContainer='flex-1'>Order by Phone</Button>
+                <Button size='small' onPress={() => { toggleModal(), navigation.navigate('ProsesOrder', { outlet }) }} classNameContainer='flex-1'>Order by Phone</Button>
             </View>
         )
     }

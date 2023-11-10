@@ -1,5 +1,6 @@
 import Button from '@components/Button/Button';
 import Input from '@components/Input/Input';
+import { BASE_URL } from '../../constant/url'
 import { AuthContext } from '@context/authContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
@@ -16,7 +17,7 @@ function Login({ navigation }: { navigation: any }) {
 
     async function handleLogin(data: any) {
 
-        const result = await axios.post('http://172.20.10.3:1337/api/auth/local', data)
+        const result = await axios.post(BASE_URL('/auth/local'), data)
 
         AsyncStorage.setItem('userData', JSON.stringify(result.data));
         setUser(result.data);

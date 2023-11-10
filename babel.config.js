@@ -24,7 +24,8 @@ module.exports = function (api) {
             '@auth': './src/api/auth',
             '@pages': './src/pages',
             '@service': './src/service',
-            '@context': './src/context'
+            '@context': './src/context',
+            '@tools': './src/tools'
           },
         }],
       'nativewind/babel',

@@ -6,7 +6,7 @@ function useModal() {
         setVisible(!visible)
     }
 
-    return { visible, toggleModal }
+    return { visible, setVisible, toggleModal }
 }
 
 export default useModal

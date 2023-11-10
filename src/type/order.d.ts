@@ -28,7 +28,6 @@ export type SalesmanAttributes = {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
-    omset: number;
     target_outlet: number;
     aktual_outlet: number;
     outlets?: OutletAttributes[],
@@ -48,45 +47,69 @@ export type DetailOrderAttributes = {
     jumlah_pcs: number;
     jumlah_pack: number;
     gross: number;
+    barang: BarangAttributes;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
+
 };
 
-export type OrderData = {
-    id: number;
-    attributes: {
-        waktu_order: string;
-        total_gross: number;
-        createdAt: string;
-        updatedAt: string;
-        publishedAt: string;
-        periode: {
-            data: {
-                id: number;
-                attributes: PeriodeAttributes;
-            };
+export type OrderAttributes = {
+    waktu_order: string;
+    total_gross: number;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    periode?: {
+        data: {
+            id: number;
+            attributes: PeriodeAttributes;
         };
-        outlet: {
-            data: {
-                id: number;
-                attributes: OutletAttributes;
-            };
+    } | number;
+    outlet?: {
+        data: {
+            id: number;
+            attributes: OutletAttributes;
         };
-        salesman: {
-            data: {
-                id: number;
-                attributes: SalesmanAttributes;
-            };
+    } | number;
+    salesman?: {
+        data: {
+            id: number;
+            attributes: SalesmanAttributes;
         };
-        status: {
-            data: {
-                id: number;
-                attributes: StatusAttributes;
-            };
+    } | number;
+    status?: {
+        data: {
+            id: number;
+            attributes: StatusAttributes;
         };
-        detail_orders: {
-            data: DetailOrderAttributes[];
+    } | number;
+    detail_orders?: {
+        data: DetailOrderAttributes[];
+    };
+};
+
+
+type BarangAttributes = {
+    data: {
+        id: number;
+        attributes: {
+            nama: string;
+            saldo_pack: number;
+            saldo_pcs: number;
+            pcs_per_pack: number;
+            harga_pcs: number;
+            harga_pack: number;
+            createdAt: string;
+            updatedAt: string;
+            publishedAt: string;
         };
     };
 };
+
+
+export type OrderData = {
+    id: number;
+    attributes: OrderAttributes
+};
+

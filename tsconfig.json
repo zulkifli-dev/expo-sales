@@ -16,7 +16,8 @@
       "@models": ["src/service/models/*"],
       "@context": ["src/context/*"],
       "@pages": ["src/pages/*"],
-      "@service": ["src/service/*"]
+      "@service": ["src/service/*"],
+      "@tools": ["src/tools/*"]
     }
   }
 }

@@ -1,19 +1,40 @@
-import Badge from '@components/Badge'
-import Button from '@components/Button/Button';
 import LabelValue from '@components/LabelValue';
-import Modal from '@components/Modal/Modal';
-import useModal from '@hooks/modal'
-import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Text, TouchableOpacity, View } from 'react-native'
-function CardOrderBarang() {
+import { DetailOrderBarangAttributes } from '@pages/prosesOrder';
+import formatRupiah from '../../tools/formatRupiah'
+import { Text, View } from 'react-native'
+import { useMemo } from 'react';
+function CardOrderBarang({ detailOrder }: { detailOrder: DetailOrderBarangAttributes }) {
+    const { barang } = detailOrder;
+    const { attributes } = barang.data;
+
+    const totalPcs = useMemo(() => detailOrder.jumlah_pcs * attributes.harga_pcs, [detailOrder])
+    const totalPack = useMemo(() => detailOrder.jumlah_pack * attributes.harga_pack, [detailOrder])
+    const jumlahPcs = useMemo(() => detailOrder.jumlah_pcs, [detailOrder])
+    const jumlahPack = useMemo(() => detailOrder.jumlah_pack, [detailOrder])
+
     return (
-        <View style={{ gap: 8 }} className='p-4  bg-white-0 my-2 rounded-xl'>
-            <Text className='flex-1'>#351517</Text>
-            <Text className='text-base text-primary font-bold'>LE Menirale  24BTLx600ML</Text>
-            <LabelValue label='Gross' value={'Rp. 2.000.000'} classNameValue='font-normal' />
-            <LabelValue label='Quantity' value={2} classNameValue='font-normal' />
-            <LabelValue label='Total' value={'Rp. 2.000.000'} classNameValue='text-primary' />
+        <View style={{ gap: 2 }} className='p-4  bg-white-0 my-2 rounded-xl'>
+            <Text className='flex-1'>#{detailOrder.barang.data.id}</Text>
+            <Text className='text-base text-primary font-bold'>{attributes?.nama}</Text>
+            <LabelValue label='Gross  per pcs' value={formatRupiah(attributes.harga_pcs)} classNameValue='font-normal' />
+            <LabelValue label='Gross  per pack' value={formatRupiah(attributes.harga_pack)} classNameValue='font-normal' />
+            <View style={{ gap: 8 }} className='flex flex-row justify-between border-secondary'>
+                <View style={{ gap: 2 }} className='flex-1 items-center border-[1px] border-primary rounded '>
+                    <Text className='text-white-0 bg-primary w-full text-center'>Pcs</Text>
+                    <View className='flex flex-row justify-between w-full p-2'>
+                        <Text className='text-center flex-1'>{jumlahPcs}</Text>
+                        <Text className='text-center flex-2'>{formatRupiah(totalPcs)}</Text>
+                    </View>
+                </View>
+                <View style={{ gap: 2 }} className='flex-1 items-center border-[1px] border-primary rounded'>
+                    <Text className='text-white-0 bg-primary w-full text-center'>Pack</Text>
+                    <View className='flex flex-row justify-between w-full  p-2'>
+                        <Text className='text-center flex-1'>{jumlahPack}</Text>
+                        <Text className='text-center flex-2'>{formatRupiah(totalPack)}</Text>
+                    </View>
+                </View>
+            </View>
+            <LabelValue label='Total' value={formatRupiah(totalPcs + totalPack)} classNameValue='text-primary' />
         </View>
     )
 }

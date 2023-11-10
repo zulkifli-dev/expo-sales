@@ -2,8 +2,11 @@
 // export const BASE_URL = 'https://siprocantik.jne-online.my.id/api'
 // export const BASE_URL = 'https://rsudsiwa.simkeskhanza.com/sipro-cantik/api'
 
+// const IP_HOSTPOT = 'http://172.20.10.3:1337/api'
+const IP_HOSTPOT = 'http://192.168.43.231:1337/api'
+const IP_WARKOP_OGI = 'http://10.153.50.185:1337/api'
 
 
 export function BASE_URL(url: string) {
-    return `http://172.20.10.3:1337/api${url}`
+    return `${IP_WARKOP_OGI}${url}`
 }
