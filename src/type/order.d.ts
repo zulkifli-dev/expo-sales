@@ -20,7 +20,7 @@ export type OutletAttributes = {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
-    status: string;
+    status: statusType;
 };
 
 export type SalesmanAttributes = {
@@ -113,3 +113,44 @@ export type OrderData = {
     attributes: OrderAttributes
 };
 
+
+export type HistoryOrderType = {
+    id: number;
+    attributes: {
+        waktu_order: string;
+        total_gross: number;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        status: string;
+        periode: {
+            data: {
+                id: number;
+                attributes: PeriodeAttributes
+            };
+        }
+        outlet: {
+            data: {
+                id: number;
+                attributes: OutletAttributes
+            };
+        };
+        salesman: {
+            data: {
+                id: number;
+                attributes: SalesmanAttributes
+            };
+        };
+        detail_orders: {
+            data: [
+                {
+                    id: number;
+                    attributes: DetailOrderAttributesss
+                }
+            ];
+        };
+    };
+};
+
+
+export type statusType = 'Toko Tutup' | 'Stop Cukup' | 'Beli Di Tempat Lain' | 'Bencana Alam' | 'Tidak DI Kunjungi' | 'Selesai';

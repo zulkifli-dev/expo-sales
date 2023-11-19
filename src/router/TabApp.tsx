@@ -17,7 +17,7 @@ export const TabApp = () => {
             tabBar={(props) => <TabNavigation {...props} />}
         >
             <Tab.Screen name="Dashboard" component={Dashboard} />
-            <Tab.Screen name="Transaksi" component={Transaksi} />
+            <Tab.Screen name="Report" component={Transaksi} />
         </Tab.Navigator>
     )
 }

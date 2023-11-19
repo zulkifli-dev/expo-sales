@@ -21,7 +21,7 @@ function Modal(props: ModalCustomProps) {
             <View style={{ width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }} className='flex justify-center items-center' >
                 <View style={{ width: width * 0.9, gap: 16 }} className='bg-white-0 p-4 rounded-xl'>
                     {props.headerComponents || (
-                        <Header classNameContainer='p-4' classNameText='text-2xl' title='Detail Outlet' />
+                        <Header classNameContainer='p-4' classNameText='text-2xl' title={props.modalTitle || 'Title'} />
                     )}
 
                     {children}

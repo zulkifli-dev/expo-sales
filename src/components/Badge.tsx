@@ -4,17 +4,10 @@ import { Text, TouchableOpacity } from 'react-native'
 
 
 
-function Badge({ children, type }: { children: ReactNode, type: any }) {
-    let containerStyle = '';
-    let textStyle = '';
-    switch (type) {
-        default:
-            containerStyle = 'bg-primary';
-            textStyle = 'text-white-0'
-    }
+function Badge({ children, containerClassname, textClassname }: { children: ReactNode, containerClassname?: string, textClassname?: string }) {
     return (
-        <TouchableOpacity className={clsx('rounded-full px-3 py-1', containerStyle)}>
-            <Text className={clsx('text-xs font-semibold', textStyle)}>{children}</Text>
+        <TouchableOpacity className={clsx('rounded-full px-3 py-1', containerClassname)}>
+            <Text className={clsx('text-xs text-white-0', textClassname)}>{children}</Text>
         </TouchableOpacity>
     )
 }

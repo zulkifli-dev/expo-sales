@@ -33,7 +33,7 @@ function Dashboard({ navigation }: { navigation: any }) {
                 const { data } = response.data
                 setPeriodes(data)
             }).catch((error) => {
-                console.log(error)
+                // console.log(error)
             })
         }
         getPeride();
@@ -43,7 +43,7 @@ function Dashboard({ navigation }: { navigation: any }) {
         let total = 0
         periodes.map((item: any) => {
             total += item.attributes.total_gross
-            console.log(item);
+            // console.log(item);
         })
 
         return total

@@ -70,7 +70,7 @@ function useDetailOrder() {
                 }
             });
         });
-        console.log(filter, '----------2--------');
+        // console.log(filter, '----------2--------');
         setListDetailOrders([...filter]);
     }, [isFocused]);
 

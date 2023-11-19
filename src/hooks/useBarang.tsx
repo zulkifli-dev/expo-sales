@@ -96,7 +96,7 @@ function useBarang() {
             const { data } = response.data
             setIslitBarang(generateToFormatDetailOrder(data))
         }).catch(() => {
-            console.log('gagal');
+            // console.log('gagal');
 
         })
         setIsLoading(false)

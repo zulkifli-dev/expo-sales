@@ -13,6 +13,7 @@ export default function Register({ navigation }: { navigation: any }) {
 
     const handleRegister = () => {
         // Handle registration logic here
+        
     };
 
     return (

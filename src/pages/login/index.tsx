@@ -33,7 +33,7 @@ function Login({ navigation }: { navigation: any }) {
                     <Input isUseHooksForm control={control} name='identifier' placeholder='Username' icon={require('../../assets/icons/iconUserBlue.png')} />
                     <Input isUseHooksForm control={control} name='password' placeholder='Password' icon={require('../../assets/icons/iconLockBlue.png')} secureTextEntry />
                     <Button classNameContainer='w-full' onPress={handleSubmit(handleLogin)}>Login</Button>
-                    <Text className='text-sm'>Don’t have an account? <Text onPress={() => navigation.navigate('Register')} className='font-bold'>Sign Up</Text></Text>
+                    {/* <Text className='text-sm'>Don’t have an account? <Text onPress={() => navigation.navigate('Register')} className='font-bold'>Sign Up</Text></Text> */}
                 </View>
             </ScrollView>
         </SafeAreaView >

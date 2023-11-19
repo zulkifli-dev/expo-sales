@@ -10,7 +10,7 @@ const TabItem = ({ index, isFocused, onPress, onLongPress, label }: any) => {
         :
         <Image style={{ width: 30, height: 30 }} source={require('../../assets/icons/iconProfileNavy.png')} />
     }
-    else if (label == 'Transaksi') {
+    else if (label == 'Report') {
       return isFocused ?
         <Image style={{ width: 30, height: 30 }} source={require('../../assets/icons/iconTransferWhite.png')} />
         :
